@@ -4,7 +4,7 @@ name: jfrog-repo
 on:
   push:
     branches:
-      - 'jfrog-artifactory-upload-file'
+      - 'main'
 
 jobs:
   jfrog-repo-job:
@@ -14,7 +14,7 @@ jobs:
 
       # Upload file "/test/jfrog_repo_test1.zip" from local to artifactory repository "example-repo-local"
       - name: jfrog-actions-workflow-upload-file
-        uses: cloudbees-io/jfrog-artifactory-upload-file-private@CBP-7099
+        uses: cloudbees-io/jfrog-artifactory-upload-file@v1.0.14
         with:
           url: ${{ vars.JFROG_URL }}
           username: ${{ vars.JFROG_ACTIONS_USERNAME }}
